@@ -1,0 +1,11 @@
+print dictionary;
+define table emp having fields (name varchar, age integer, sal real, bday date, state char(2), employed boolean);
+print dictionary;
+rename table test to test1;
+rename table emp to test1;
+print dictionary;
+define table test1 having fields (test boolean);
+define table test having fields (test boolean);
+rename table test to test1;
+drop table emp;
+print dictionary;

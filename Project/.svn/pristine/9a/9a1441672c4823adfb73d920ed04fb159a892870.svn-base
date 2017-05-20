@@ -1,0 +1,29 @@
+define table testA having fields(testA1 boolean, testA2 char(3), testA3 date, testA4 integer, testA5 real, testA6 varchar);
+insert (true, 'dog', '11/12/1994', 19, 3.14159, 'Huntington') into testA;
+insert (false, 'cat', '01/10/1997', 24, 2.90, 'Potato') into testA;
+insert (true, 'pen', '07/04/1776', 35, 7.25, 'Jacob') into testA;
+insert (true, 'lid', '12/21/2012', 92, 2.71828, 'Computer') into testA;
+insert (false, 'jaw', '04/02/2014', 24, 0.00001, 'Word') into testA;
+
+define table testB having fields(testB1 boolean, testB2 char(3));
+insert (false, 'him') into testB;
+insert (true, 'pig') into testB;
+insert (false, 'ten') into testB;
+insert (true, 'her') into testB;
+insert (false, 'cap') into testB;
+
+define table testC having fields(testC1 integer, testC2 varchar);
+insert (1777, 'favorite') into testC;
+insert (27, 'cube') into testC;
+insert (81, 'another') into testC;
+insert (24, 'day') into testC;
+insert (5, 'half') into testC;
+
+join testA and testB;
+join testA and testC;
+join testB and testC;
+
+drop table testA;
+drop table testB;
+drop table testC;
+exit;

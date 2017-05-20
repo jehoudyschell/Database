@@ -1,0 +1,29 @@
+define table testA having fields(testA1 boolean, testA2 char(3), testA3 date, testA4 integer, testA5 real, testA6 varchar);
+insert (true, 'dog', '11/12/1994', 19, 3.14159, 'Huntington') into testA;
+insert (false, 'cat', '01/10/1997', 24, 2.90, 'Potato') into testA;
+insert (true, 'pen', '07/04/1776', 35, 7.25, 'Jacob') into testA;
+insert (true, 'kid', '12/21/2012', 92, 2.71828, 'Computer') into testA;
+insert (false, 'jaw', '04/02/2014', 24, 0.001, 'Word') into testA;
+
+define table testB having fields(testB1 boolean, testB2 char(3), testB3 date, testB4 integer, testB5 real, testB6 varchar);
+insert (true, 'dog', '11/12/1994', 19, 3.14159, 'Huntington') into testB;
+insert (false, 'hat', '01/10/1997', 24, 2.90, 'Potato') into testB;
+insert (true, 'Ben', '07/04/1776', 35, 7.25, 'Jacob') into testB;
+insert (true, 'lid', '12/21/2012', 92, 2.71828, 'Computer') into testB;
+insert (false, 'jaw', '04/02/2014', 24, 0.01, 'Word') into testB;
+
+define table testC having fields(testC1 boolean, testC2 char(3), testC3 date, testC4 integer, testC5 real, testC6 varchar);
+insert (true, 'dog', '11/12/1994', 19, 3.14159, 'Huntington') into testC;
+insert (false, 'hat', '01/10/1997', 24, 2.90, 'Potato') into testC;
+insert (true, 'pen', '07/04/1776', 35, 7.25, 'Jacob') into testC;
+insert (true, 'lid', '12/21/2012', 92, 2.71828, 'Computer') into testC;
+insert (false, 'jaw', '04/02/2014', 24, 0.01, 'Word') into testC;
+
+intersect testA and testB;
+intersect testA and testC;
+intersect testB and testC;
+
+drop table testA;
+drop table testB;
+drop table testC;
+exit;
